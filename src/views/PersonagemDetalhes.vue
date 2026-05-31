@@ -1,4 +1,4 @@
-<script>
+<!-- <script>
 export default {
   name: 'Usuarios', // nome do componente
   computed: {
@@ -16,11 +16,11 @@ export default {
       <div class="card-body">
         <h1 class="card-title h2 mb-3">Usuários</h1>
         <!-- só exibe o ID se ele existir na URL -->
-        <p v-if="id" class="card-text">
+        <!-- <p v-if="id" class="card-text">
           ID:
           <span class="badge bg-primary">{{ id }}</span>
         </p>
       </div>
     </div>
   </div>
-</template>
+</template> -->
