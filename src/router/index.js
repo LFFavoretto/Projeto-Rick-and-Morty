@@ -6,7 +6,8 @@ import NaoExiste from '../views/NaoExiste.vue'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/personagem/:id', component: Personagem},
+    { path: '/character/:id', component: Personagem},
+    { path: '/about'},
     { path: '/:pathMatch(.*)*', component: NaoExiste },
     { path: '/inicio', redirect: '/' }
 ]

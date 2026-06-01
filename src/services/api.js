@@ -29,3 +29,15 @@ export async function detalharPersonagem(id) {
 
     return await res.json();    
 }
+
+export async function episodios(ids){
+    const res = await fetch (`${urlBase}/episode/${ids.join(',')}`);
+
+    if (!res.ok) {
+        throw new Error('Erro ao buscar o episódio.');
+    }
+
+    const dados = await res.json();
+
+    return Array.isArray(dados) ? dados : [dados]
+}

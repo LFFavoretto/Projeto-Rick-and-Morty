@@ -6,6 +6,6 @@ import router from './router/index.js';
 
 <template>
     <router-view/>
-    <PersonagemCard/>
+    <PersonagemCard :personagem="personagem"/>
 </template>
 <style scoped></style>
