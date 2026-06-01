@@ -9,7 +9,7 @@
                     <router-link to="/" class="nav-link text-white">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link to="/usuarios" class="nav-link text-white">Usuários</router-link>
+                    <router-link to="/sobre" class="nav-link text-white">Sobre Nós</router-link>
                 </li>
             </ul>
         </div>

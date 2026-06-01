@@ -1,26 +1,35 @@
-<!-- <script>
-export default {
-  name: 'Usuarios', // nome do componente
-  computed: {
-    id() {
-      // acessa o parâmetro "id" da rota atual (ex: /usuarios/1)
-      return this.$route.params.id
+<script>
+  import { detalharPersonagem } from '@/services/api';
+
+  export default {
+    name: 'PersonagemDetalhes',
+
+    data() {
+      return{
+        personagem: null
+      }
+    },
+
+    async mounted() {
+      const id = this.$route.params.id
+      this.personagem = await detalharPersonagem(id)
     }
   }
-}
 </script>
 
 <template>
-  <div class="container py-5">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h1 class="card-title h2 mb-3">Usuários</h1>
-        <!-- só exibe o ID se ele existir na URL -->
-        <!-- <p v-if="id" class="card-text">
-          ID:
-          <span class="badge bg-primary">{{ id }}</span>
-        </p>
-      </div>
+  <main>
+    <div class="personagem">
+        <img :src="personagem.image" :alt="personagem.name">        
+        <p>Status: {{ personagem.status }}</p>
+        <p>Espécie: {{ personagem.species }}</p>
+        <p>Gênero: {{ personagem.gender }}</p>
+        <p>Origem: {{ personagem.origin[0] }}</p>
+        <p>Última localização: {{ personagem.location[0] }}</p>
     </div>
-  </div>
-</template> -->
+    <div class="info">
+      <h3>{{ personagem.name }}</h3>
+    </div>
+  </main>
+    
+</template>

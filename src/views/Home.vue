@@ -1,5 +1,6 @@
 <script>
 import { listarPersonagens } from '@/services/api';
+import PersonagemCard from '@/components/PersonagemCard.vue';
 
 export default {
     name: 'HomeView',
@@ -21,8 +22,10 @@ export default {
                 this.erro = '';
 
                 const dados = await listarPersonagens(this.paginaAtual);
+                console.log(dados);
 
                 this.personagens = dados.results;
+                console.log(this.personagens);
                 this.totalPaginas = dados.info.pages;
             }
             catch (error) {
@@ -54,6 +57,10 @@ export default {
 
     async mounted() {
         await this.carregarPagina();
+    },
+
+    components: {
+        PersonagemCard
     }
 }
 </script>
