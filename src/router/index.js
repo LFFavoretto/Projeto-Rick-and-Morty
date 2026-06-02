@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '../views/Home.vue'
-import Usuarios from '../views/Usuarios.vue'
+import Personagem from '../views/PersonagemDetalhes.vue'
 import NaoExiste from '../views/NaoExiste.vue'
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/Usuarios/', component: Usuarios },
-    { path: '/Usuarios/:id', component: Usuarios },
+    { path: '/character/:id', component: Personagem},
+    { path: '/about'},
     { path: '/:pathMatch(.*)*', component: NaoExiste },
     { path: '/inicio', redirect: '/' }
 ]
