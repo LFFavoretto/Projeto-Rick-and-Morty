@@ -7,4 +7,8 @@ import Nav from './components/Nav.vue'
     <Nav />
     <router-view/>
 </template>
-<style scoped></style>
+<style>
+#app{
+    background-color: #303641;
+}
+</style>

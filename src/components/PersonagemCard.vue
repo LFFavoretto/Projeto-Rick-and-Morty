@@ -12,11 +12,11 @@ export default{
 </script>
 
 <template>
-    <div class="col-md-3 mb-4">
-        <div class="card h-100 bg-dark text-light">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card h-100 bg-dark text-light border-success border-3">
             <img :src="personagem.image" :alt="personagem.name" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title text-success">{{ personagem.name }}</h5>
+                <h5 class="card-title fw-bold text-success">{{ personagem.name }}</h5>
                 <p class="card-text mb-1"><strong>Status:</strong> {{ personagem.status }}</p>
                 <p class="card-text"><strong>Espécie:</strong> {{ personagem.species }}</p>
             </div>
@@ -28,3 +28,4 @@ export default{
         </div>        
     </div>    
 </template>
+
