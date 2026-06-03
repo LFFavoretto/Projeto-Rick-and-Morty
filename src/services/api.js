@@ -14,7 +14,7 @@ export async function  buscarPersonagem(nome) {
     const res = await fetch(`${urlBase}/character?name=${nome}`);
 
     if (!res.ok) {
-        throw new Error('Erro: ' + res.status);
+        throw new Error('Personagem não encontrado.');
     }
 
     return await res.json();

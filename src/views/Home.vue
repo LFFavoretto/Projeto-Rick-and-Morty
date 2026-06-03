@@ -1,5 +1,6 @@
 <script>
-import { listarPersonagens } from '@/services/api';
+import Pesquisa from '@/components/Pesquisa.vue';
+import { buscarPersonagem, listarPersonagens } from '@/services/api';
 import PersonagemCard from '@/components/PersonagemCard.vue';
 
 export default {
@@ -52,7 +53,17 @@ export default {
 
                 await this.carregarPagina();
             }
-        } 
+        },
+        async pesquisarPersonagem(nome) {
+            if (!nome.trim()){
+                await this.carregarPagina()
+                return
+            }
+
+            const dados = await buscarPersonagem(nome)
+
+            this.personagens = dados.results
+        }
     },
 
     async mounted() {
@@ -60,6 +71,7 @@ export default {
     },
 
     components: {
+        Pesquisa,
         PersonagemCard
     }
 }
@@ -84,10 +96,8 @@ export default {
         <button @click="proximaPagina", :disabled="paginaAtual === totalPaginas"> Próxima </button>
     </div>
 
+    <Pesquisa @buscar="pesquisarPersonagem"/>
     
-
-
-
 </template>
 
 <style scoped></style>
