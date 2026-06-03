@@ -12,14 +12,19 @@ export default{
 </script>
 
 <template>
-    <div class="card">
-        <img :src="personagem.image" :alt="personagem.name">
-        <h3>{{ personagem.name }}</h3>
-        <p>Status: {{ personagem.status }}</p>
-        <p>Espécie: {{ personagem.species }}</p>
-        <router-link :to="`/character/${personagem.id}`"class="btn btn-success">
-            Ver Detalhes
-        </router-link>
-
-    </div>
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 bg-dark text-light">
+            <img :src="personagem.image" :alt="personagem.name" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title text-success">{{ personagem.name }}</h5>
+                <p class="card-text mb-1"><strong>Status:</strong> {{ personagem.status }}</p>
+                <p class="card-text"><strong>Espécie:</strong> {{ personagem.species }}</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">        
+                <router-link :to="`/character/${personagem. id}`"class="btn btn-success w-100">
+                    Ver Detalhes
+                </router-link>
+            </div>
+        </div>        
+    </div>    
 </template>

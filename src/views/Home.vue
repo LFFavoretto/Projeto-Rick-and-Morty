@@ -78,26 +78,30 @@ export default {
 </script>
 
 <template>
+
+    <Pesquisa @buscar="pesquisarPersonagem"/>
+
     <div v-if="carregando">
         Carregando...
     </div>
 
     <div v-else-if="erro">  
         {{ erro }}
-    </div>
+    </div>    
 
     <div v-else>
-        <PersonagemCard v-for="personagem in personagens", :key="personagem.id" :personagem="personagem"/>
-
+        <div class="container mt-4">
+            <div class="row">
+                <PersonagemCard v-for="personagem in personagens" :key="personagem.id" :personagem="personagem"/>
+            </div>
+        </div>
+        
         <button @click="paginaAnterior" :disabled="paginaAtual === 1"> Anterior </button>
 
         <span> Página {{ paginaAtual }} </span>
 
-        <button @click="proximaPagina", :disabled="paginaAtual === totalPaginas"> Próxima </button>
-    </div>
-
-    <Pesquisa @buscar="pesquisarPersonagem"/>
-    
+        <button @click="proximaPagina" :disabled="paginaAtual === totalPaginas"> Próxima </button>
+    </div>    
 </template>
 
 <style scoped></style>

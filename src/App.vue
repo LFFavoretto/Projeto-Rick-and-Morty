@@ -1,11 +1,10 @@
 <script setup>
 import Nav from './components/Nav.vue'
-import PersonagemCard from './components/PersonagemCard.vue';
 // import router from './router/index.js';
 </script>
 
 <template>
+    <Nav />
     <router-view/>
-    <PersonagemCard :personagem="personagem"/>
 </template>
 <style scoped></style>
