@@ -151,7 +151,7 @@ export default {
 
 h3{
     color: white;
-    margin-left: 300px;
+    margin-left: 110px;
     padding-top: 20px;
 }
 
