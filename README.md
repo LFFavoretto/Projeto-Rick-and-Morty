@@ -1,35 +1,42 @@
-This template should help get you started developing with Vue 3 in Vite.
+# Projeto Rick and Morty
 
-## Recommended IDE Setup
+Este template deve ajudar você a começar a desenvolver com Vue 3 utilizando Vite.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Configuração recomendada da IDE
 
-## Recommended Browser Setup
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (desative a extensão Vetur).
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Configuração recomendada do navegador
 
-## Customize configuration
+### Navegadores baseados em Chromium (Chrome, Edge, Brave, etc.)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- [Vue.js Devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+- Ative o **Custom Object Formatter** nas Ferramentas de Desenvolvedor do Chrome.
 
-## Project Setup
+### Firefox
+
+- [Vue.js Devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+- Ative o **Custom Object Formatter** nas Ferramentas de Desenvolvedor do Firefox.
+
+## Personalização da configuração
+
+Consulte a documentação de referência da configuração do Vite:
+
+https://vite.dev/config/
+
+## Configuração do projeto
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### Compilar e recarregar automaticamente durante o desenvolvimento
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compilar e gerar a versão otimizada para produção
 
 ```sh
 npm run build
