@@ -105,10 +105,8 @@ export default {
     </div>
     <div class="container">
         <Pesquisa @buscar="pesquisarPersonagem"/>
-    </div>
-
-    <h3>Personagens</h3>
-    
+        <h3 class="titulo-personagem">Personagens</h3>
+    </div>   
 
     <div v-if="carregando">
         Carregando...
@@ -149,9 +147,8 @@ export default {
     max-width: 500px;
 }
 
-h3{
+.titulo-personagem{
     color: white;
-    margin-left: 110px;
     padding-top: 20px;
 }
 
@@ -164,15 +161,10 @@ h3{
         height: 400px;
         background-size: cover;
         background-position: center;
-    }
-
-    h3{
-        margin-left: 300px;
-        font-size: 2rem;
-    }
+    }  
 
     .conteudo-banner{
-        margin-left: 250px;
+        margin-left: 180px;
     }
 }
 
@@ -189,11 +181,6 @@ h3{
     .conteudo-banner .h2{
         font-size: 2rem;
     }
-
-    h3{
-        margin-left: 40px;
-        font-size: 1.8rem;
-    }
 }
 
 @media (max-width: 576px){
@@ -201,28 +188,19 @@ h3{
     .card-apresentacao{
         height: 220px;
         padding: 20px;
-        background-position: 75% center;
+        background-position: 70% center;
     }
 
     .conteudo-banner{
         max-width: 220px;
-        margin-left: 0;
     }
 
     .conteudo-banner .h2{
-        font-size: 1.5rem;
-        margin-bottom: 8px;
+        font-size: 1.4rem;
     }
 
-    .conteudo-banner p{
-        font-size: 0.9rem;
-        margin-bottom: 0;
-    }
-
-    h3{
-        margin-left: 0;
-        text-align: center;
-        font-size: 1.5rem;
+    .conteudo-banner p:last-child{
+        font-size: 0.8rem;
     }
 }
 
