@@ -26,4 +26,9 @@ import { buscarPersonagem } from '@/services/api';
     border-radius: 10px;
     overflow: hidden;
 }
+
+.form-control:focus{
+    box-shadow: none;
+    border-color: transparent;
+}
 </style>

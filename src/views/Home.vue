@@ -12,7 +12,8 @@ export default {
             paginaAtual: 1,
             totalPaginas: 0,
             carregando: false,
-            erro: ''
+            erro: '',
+            termoBusca: ''
         }
     },
 
@@ -22,11 +23,15 @@ export default {
                 this.carregando = true;
                 this.erro = '';
 
-                const dados = await listarPersonagens(this.paginaAtual);
-                console.log(dados);
+                let dados;
+                if (this.termoBusca){
+                    dados =  await buscarPersonagem(this.termoBusca, this.paginaAtual); 
+                } else {
+                    dados = await listarPersonagens(this.paginaAtual);
+                }
+                
 
                 this.personagens = dados.results;
-                console.log(this.personagens);
                 this.totalPaginas = dados.info.pages;
             }
             catch (error) {
@@ -55,14 +60,26 @@ export default {
             }
         },
         async pesquisarPersonagem(nome) {
-            if (!nome.trim()){
-                await this.carregarPagina()
-                return
+            try {
+                this.erro = '';
+
+                if (!nome.trim()) {
+                    this.termoBusca = nome;
+                    this.paginaAtual = 1;
+                    await this.carregarPagina();
+                    return;
+                }
+
+                const dados = await buscarPersonagem(nome);
+
+                this.personagens = dados.results;
+                this.termoBusca = nome;
+
+            } catch (error) {
+                console.error(error);
+                this.erro = error.message;
             }
-
-            const dados = await buscarPersonagem(nome)
-
-            this.personagens = dados.results
+            
         }
     },
 
@@ -79,7 +96,19 @@ export default {
 
 <template>
 
-    <Pesquisa @buscar="pesquisarPersonagem"/>
+    <div class="card-apresentacao">
+        <div class="conteudo-banner">
+            <p class="text-white font-weight-bold h2">Bem-vindo ao universo</p>
+            <p class="cor-texto font-weight-bold h2">Rick and Morty</p>
+            <p class="text-white font-weigth-normal">Pesquise e descubra personagens  incríveis</p>
+        </div>        
+    </div>
+    <div class="container">
+        <Pesquisa @buscar="pesquisarPersonagem"/>
+    </div>
+
+    <h3>Personagens</h3>
+    
 
     <div v-if="carregando">
         Carregando...
@@ -95,13 +124,38 @@ export default {
                 <PersonagemCard v-for="personagem in personagens" :key="personagem.id" :personagem="personagem"/>
             </div>
         </div>
-        
-        <button @click="paginaAnterior" :disabled="paginaAtual === 1"> Anterior </button>
-
-        <span> Página {{ paginaAtual }} </span>
-
-        <button @click="proximaPagina" :disabled="paginaAtual === totalPaginas"> Próxima </button>
+        <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+            <button class="btn btn-dark" @click="paginaAnterior" :disabled="carregando || paginaAtual === 1"> Anterior </button>
+            <span class="badge bg-success fs-6"> Página {{ paginaAtual }} </span>
+            <button class="btn btn-dark" @click="proximaPagina" :disabled="carregando || paginaAtual === totalPaginas"> Próxima </button>
+        </div>        
     </div>    
 </template>
 
-<style scoped></style>
+<style scoped>
+.card-apresentacao{
+    height: 400px;
+    background-image: url('/src/assets/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.conteudo-banner{
+    margin-left: 250px;
+}
+
+h3{
+    color: white;
+    margin-left: 300px;
+    padding-top: 20px;
+}
+
+.cor-texto{
+    color:#1AA605;
+}
+</style>

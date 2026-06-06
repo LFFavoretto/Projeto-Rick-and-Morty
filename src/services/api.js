@@ -10,8 +10,8 @@ export async function listarPersonagens(pagina = 1) {
     return await res.json();
 }
 
-export async function  buscarPersonagem(nome) {
-    const res = await fetch(`${urlBase}/character?name=${nome}`);
+export async function  buscarPersonagem(nome, pagina = 1) {
+    const res = await fetch(`${urlBase}/character?name=${nome}&page=${pagina}`);
 
     if (!res.ok) {
         throw new Error('Personagem não encontrado.');

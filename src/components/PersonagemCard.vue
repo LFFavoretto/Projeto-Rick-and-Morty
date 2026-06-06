@@ -16,7 +16,7 @@ export default{
         <div class="card h-100 bg-dark text-light border-success border-3">
             <img :src="personagem.image" :alt="personagem.name" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title fw-bold text-success">{{ personagem.name }}</h5>
+                <h5 class=" cor-texto card-title fw-bold ">{{ personagem.name }}</h5>
                 <p class="card-text mb-1"><strong>Status:</strong> {{ personagem.status }}</p>
                 <p class="card-text"><strong>Espécie:</strong> {{ personagem.species }}</p>
             </div>
@@ -29,3 +29,8 @@ export default{
     </div>    
 </template>
 
+<style scoped>
+.cor-texto{
+    color: #1AA605;
+}
+</style>
