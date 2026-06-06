@@ -134,19 +134,19 @@ export default {
 
 <style scoped>
 .card-apresentacao{
-    height: 400px;
+    height: 350px;
     background-image: url('/src/assets/banner.jpg');
-    background-size: cover;
+    background-size: 100% 100%;
     background-position: center;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 80px;
     margin-top: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 25px;;
 }
 
 .conteudo-banner{
-    margin-left: 250px;
+    max-width: 500px;
 }
 
 h3{
@@ -158,4 +158,73 @@ h3{
 .cor-texto{
     color:#1AA605;
 }
+
+@media (min-width: 1920px) {
+    .card-apresentacao{
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    h3{
+        margin-left: 300px;
+        font-size: 2rem;
+    }
+
+    .conteudo-banner{
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 992px){
+    .card-apresentacao{
+        height: 280px;
+        padding-left: 40px;
+    }
+
+    .conteudo-banner{
+        margin-left: 40px;
+    }
+
+    .conteudo-banner .h2{
+        font-size: 2rem;
+    }
+
+    h3{
+        margin-left: 40px;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px){
+
+    .card-apresentacao{
+        height: 220px;
+        padding: 20px;
+        background-position: 75% center;
+    }
+
+    .conteudo-banner{
+        max-width: 220px;
+        margin-left: 0;
+    }
+
+    .conteudo-banner .h2{
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .conteudo-banner p{
+        font-size: 0.9rem;
+        margin-bottom: 0;
+    }
+
+    h3{
+        margin-left: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+}
+
+
 </style>

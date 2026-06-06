@@ -31,5 +31,63 @@
     padding-left: 110px;
 }
 
+@media (min-width: 1920px){
 
+    .card-erro{
+        height: 650px;
+        background-size: cover;
+    }
+
+    .texto-erro{
+        padding-left: 150px;
+    }
+}
+
+@media (max-width: 992px){
+
+    .card-erro{
+        height: 450px;
+        background-size: cover;
+        background-position: 70% center;
+    }
+
+    .texto-erro{
+        padding-left: 40px;
+        margin-top: 0;
+        max-width: 350px;
+    }
+
+    .texto-erro h1{
+        font-size: 2rem;
+    }
+
+    .texto-erro p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px){
+
+    .card-erro{
+        height: 300px;
+        padding: 20px;
+        background-size: cover;
+        background-position: 80% center;
+    }
+
+    .texto-erro{
+        padding-left: 0;
+        margin-top: 0;
+        max-width: 220px;
+    }
+
+    .texto-erro h1{
+        font-size: 1.2rem;
+        line-height: 1.2;
+    }
+
+    .texto-erro p{
+        font-size: 0.7rem;
+    }
+}
 </style>
