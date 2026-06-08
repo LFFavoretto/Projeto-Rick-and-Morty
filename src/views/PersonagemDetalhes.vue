@@ -76,7 +76,7 @@
     
 </template>
 
-<style>
+<style scoped>
 main{
   min-height: 100vh;
 }
