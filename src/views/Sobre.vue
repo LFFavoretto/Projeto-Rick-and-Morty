@@ -9,7 +9,7 @@
                     <div class="card-body ps-0 pe-4 py-4 conteudo-sobre">                                    
                         <h1 >Sobre o Projeto</h1>
                         <p>Este projeto acadêmico foi desenvolvido utilizando Vue.js 3 e a Rick and Morty API, com o objetivo de explorar conceitos modernos de desenvolvimento front-end.</p> 
-                        <p>A aplicação permite pesquisar personagens, visuar detalhes, navegar entre páginas e consultar informações relacionadas ao universo de Rick and Morty.</p>
+                        <p>A aplicação permite pesquisar personagens, visualizar detalhes, navegar entre páginas e consultar informações relacionadas ao universo de Rick and Morty.</p>
                         <p>Durante o desenvolvimento foram aplicados conceitos como:</p>
                         <ul class="info">
                             <li>Componentização com Vue.js</li>
